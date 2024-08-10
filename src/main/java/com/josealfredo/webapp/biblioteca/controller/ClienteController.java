@@ -35,7 +35,7 @@ public class ClienteController {
     }
 
     @GetMapping("/cliente")
-    public ResponseEntity<Cliente> buscarCliente(@RequestParam long dpi){
+    public ResponseEntity<Cliente> buscarCliente(@RequestParam Long dpi){
         try {
             return ResponseEntity.ok(clienteService.buscarClienteporId(dpi));
         } catch (Exception e) {
@@ -50,11 +50,9 @@ public class ClienteController {
         try {
             clienteService.guardarCliente(cliente);
             response.put("message","Se agregar Correctamente Cliente");
-
             return ResponseEntity.ok(response);
         } catch (Exception e) {
-            response.put("error","No se pudo agregar Correctamente");
-
+            response.put("error","No se pudo agregar Correctamente Cliente");
             return ResponseEntity.badRequest().body(response);
         }
     }
