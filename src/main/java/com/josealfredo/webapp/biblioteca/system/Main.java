@@ -7,8 +7,11 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import com.josealfredo.webapp.biblioteca.BibliotecaApplication;
+import com.josealfredo.webapp.biblioteca.controller.FXController.ForClienteController;
 import com.josealfredo.webapp.biblioteca.controller.FXController.IndexController;
 import com.josealfredo.webapp.biblioteca.controller.FXController.MenuCategoriaController;
+import com.josealfredo.webapp.biblioteca.controller.FXController.MenuClientesController;
+import com.josealfredo.webapp.biblioteca.controller.FXController.MenuEmpleadosController;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -72,5 +75,35 @@ public class Main extends Application{
         }
     }
 
+    public void menuClienteTemplates(){
+        try {
+            MenuClientesController menuClienteTemplates = (MenuClientesController)switchScene("MenuClientes.fxml", 1000, 650);
+            menuClienteTemplates.setStage(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+    }
+
+    public void formClienteTemplates(int op){
+        try {
+            ForClienteController formClienteTemplates = (ForClienteController)switchScene("FormClientes.fxml",500,750);
+            formClienteTemplates(op);
+            formClienteTemplates.setStage(this); 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void menuEmpleadosTemplates(){
+        try {
+            MenuEmpleadosController menuEmpleadosTemplates = (MenuEmpleadosController)switchScene("MenuEmpleados.fxml", 1000, 600);
+            menuEmpleadosTemplates.setStage(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
+    

@@ -21,7 +21,7 @@ public class IndexController implements Initializable{
     private Main stage;
 
     @FXML
-    MenuItem btnMenuCategorias;
+    MenuItem btnMenuCategorias,btnClientes,btnEmpleado,btnLibro,btnPrestamo,btnPrestamoLibro;
 
     @Override
     public void initialize(URL url, ResourceBundle resources) {
@@ -32,8 +32,10 @@ public class IndexController implements Initializable{
     public void handleButtonAction(ActionEvent event){
         if(event.getSource() == btnMenuCategorias){
             stage.menuCategoriaTemplates();
-        }else{
-
+        }else if(event.getSource() == btnClientes){
+            stage.menuClienteTemplates();
+        }else if(event.getSource() == btnEmpleado){
+            stage.menuEmpleadosTemplates();
         }
     }
     
